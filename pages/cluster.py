@@ -1,10 +1,8 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
-import streamlit as st
-from babel.numbers import format_currency
 
-def show(df):
+def show(df, st):
     st.header("Tren Penyewaan Harian per Cluster")
 
     st.header("Ringkasan Data")

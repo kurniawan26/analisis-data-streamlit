@@ -2,6 +2,7 @@ import pandas as pd
 import streamlit as st
 
 import pages.cluster as cluster
+import pages.holiday as holiday
 import utils.data_formatter as utils
 
 @st.cache_data
@@ -15,10 +16,12 @@ all_df = load_data()
 holiday_data = utils.create_by_holiday(all_df)
 season_data = utils.create_by_season(all_df)
 
-st.sidebar.title("Navigasi")
-menu = st.sidebar.radio("Pilih Halaman", ["Tren Cluster"])
+menu = st.sidebar.radio("Pilih Halaman", ["Overview","Tren Cluster"])
 
-st.title("Analisis Penyewaan Sepeda Harian Berdasarkan Cluster")
+st.title("Analisis Penyewaan Sepeda Harian")
+
+if menu == "Overview":
+    holiday.show(all_df, st)
 
 if menu == "Tren Cluster":
-    cluster.show(all_df)
+    cluster.show(all_df, st)
