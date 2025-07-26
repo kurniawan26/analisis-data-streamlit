@@ -3,8 +3,8 @@
 ## Setup Environment - Shell/Terminal
 
 ```
-mkdir proyek_analisis_data
-cd proyek_analisis_data
+git clone https://github.com/kurniawan26/analisis-data-streamlit
+cd analisis-data-streamlit
 pipenv install
 pipenv shell
 pip install -r requirements.txt
