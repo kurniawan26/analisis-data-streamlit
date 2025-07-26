@@ -1,3 +1,4 @@
+import os
 import pandas as pd
 import streamlit as st
 
@@ -8,7 +9,9 @@ import utils.data_formatter as utils
 
 @st.cache_data
 def load_data():
-    df = pd.read_csv("day.csv")
+    current_dir = os.path.dirname(__file__)
+    file_path = os.path.join(current_dir, "data", "day.csv")
+    df = pd.read_csv(file_path)
     df['dteday'] = pd.to_datetime(df['dteday'])
     return df
 
